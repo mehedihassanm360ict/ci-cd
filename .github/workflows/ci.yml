@@ -1,19 +1,21 @@
-name: CI TEST
+name: Self Hosted Runner
 
 on:
   push:
+    branches:
+      - main
 
 jobs:
-  run-tests:
+  build:
     runs-on: ubuntu-latest
+    name: Build Project
+
     steps:
       - name: Checkout Code
-        uses: actions/checkout@v3
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: 18
+        uses: action/checkout@v3
+
       - name: Install Dependencies
-        run: npm install
-      - name: Run Test
-        run: npm run test
+        uses: npm install
+
+      - name: Build the project
+        uses: npm run build
