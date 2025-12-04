@@ -7,7 +7,7 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: test_self_hosted_runner
     name: Build Project
 
     steps:
