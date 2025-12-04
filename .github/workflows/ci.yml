@@ -8,6 +8,9 @@ on:
 jobs:
   build:
     runs-on: test_self_hosted_runner
+    defaults:
+      run:
+        shell: bash
     name: Build Project
 
     steps:
